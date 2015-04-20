@@ -1,5 +1,5 @@
 __all__ = ['Analyzer']
 
-from .segment import Analyzer
+from .segmenter import Analyzer
 
 

@@ -1,7 +1,7 @@
 import unittest
 
 
-from segment.analyzer import Analyzer
+from segment.segmenter import Analyzer
 
 
 class TestPySegment(unittest.TestCase):

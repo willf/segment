@@ -27,7 +27,7 @@ class Analyzer(object):
         self.total = 0.0
         self.minimum_frequency = minimum_frequency
         cwd = os.path.dirname(os.path.realpath(__file__))
-        self.total = float(open(cwd + "/data/" + language + "/total").readlines()[0])
+        self.total = float(open(cwd + "/data/" + language + "/total.tsv").readlines()[0])
         self.case_folding = case_folding
         counts = dict()
         for line in open(cwd + "/data/" + language + "/frequencies.tsv"):
