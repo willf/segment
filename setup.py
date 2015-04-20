@@ -11,9 +11,9 @@ config = {
     'author_email': 'will.fitzgerald@pobox.com',
     'version': '0.1',
     'install_requires': [],
-    'packages': ['segmenter'],
+    'packages': ['segment'],
     'scripts': [],
-    'name': 'segmenter'
+    'name': 'segment'
 }
 
 setup(**config)
