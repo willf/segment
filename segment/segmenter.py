@@ -57,7 +57,8 @@ class Analyzer(object):
         if self.case_folding:
             text = text.lower()
         n = len(text)
-        words = [''] + [ch for ch in text]
+        # strings can be split into unicode chars using list
+        words = [''] + list(text)
         best = [1.0] + [0.0] * n
         # fill in vectors best, words via dynamic programming
         for i in range(n + 1):
@@ -71,7 +72,11 @@ class Analyzer(object):
         seq = []
         i = len(words) - 1
         while i > 0:
-            seq.append(words[i])
-            i -= len(words[i])
+            # prevent an infinite loop from occuring here
+            if len(words[i]) > 0:
+                seq.append(words[i])
+                i -= len(words[i])
+            else:
+                i -= 1
         # reverse sequence
         return seq[::-1]
