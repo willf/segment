@@ -20,7 +20,9 @@ class TestPySegment(unittest.TestCase):
         s = Analyzer('twitter')
         self.assertEqual(s.segment("bieberlovesbeliebers"), ['bieber', 'loves', 'beliebers'])
 
-
+    def test_segment_anchor(self):
+        s = Analyzer('anchor')
+        self.assertEquals(s.segment("wordpress&sex", ['wordpress','&','sex'])
 
 if __name__ == '__main__':
     unittest.main()
